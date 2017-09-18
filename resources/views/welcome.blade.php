@@ -50,6 +50,8 @@
 
         <p>You will be able to bid on one of the six seats that are available. All proceeds from the auction will
             benefit Saving Grace K9s.</p>
+
+        <h4>To see the most current bids, you can <a href="/">refresh</a> this page.</h4>
         <h2>Bidding will close in <span id="countdown"></span></h2>
 
     </div>
