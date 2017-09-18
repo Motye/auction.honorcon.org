@@ -68,8 +68,13 @@ class User extends Model implements
 
     public function wasLastBidder($seat = 1)
     {
-        $lastBid = Bid::where('seat', $seat)->orderBy('bid')->skip(1)->take(1)->first();
+        try {
+            $lastBid = Bid::where('seat', $seat)->orderBy('bid')->skip(1)->take(1)->firstOrFail();
 
-        return $lastBid->bidder == $this->id;
+            return $lastBid->bidder == $this->id;
+        } catch (\Exception $e) {
+            return false;
+        }
+
     }
 }
