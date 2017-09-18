@@ -75,6 +75,7 @@
 
                     {{--Only show bid form if it's past the opening date or skip_date_check is true AND the user has confirmed their email address--}}
                     @if((time() >= strtotime(config('bids.open')) || config('bids.skip_date_check') === true) && Auth::user()->confirmed === true)
+                        <p>Bidding will close in <span id="countdown"></span>
                         <ul>
                             @for ($i = 1; $i < 7; $i++)
                                 <li>The current high bid for seat {{ $i }} is
@@ -121,7 +122,7 @@
     @endif
 
     <script>
-        CountDownTimer('{{ config('bids.open') }}', 'countdown');
+        CountDownTimer('{{ config('bids.close') }}', 'countdown');
 
         function CountDownTimer(dt, id) {
             var end = new Date(dt);
