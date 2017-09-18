@@ -43,6 +43,7 @@
         @endif
     </div>
     <div class="footer_area panel-primary pad">
+        <h2>Bidding will close in <span id="countdown"></span></h2>
         <p>Join Larry Correia, author of the Monster Hunter International series, as he GMs a special one night role
             playing game session for the upcoming Savage Worlds Monster Hunter game. Welcome MHI graduating newbie class
             of 2017. Evil looms. Cowboy up. Kill it. Get paid. Open for up to six players. Game session should last
@@ -75,7 +76,6 @@
 
                     {{--Only show bid form if it's past the opening date or skip_date_check is true AND the user has confirmed their email address--}}
                     @if((time() >= strtotime(config('bids.open')) || config('bids.skip_date_check') === true) && Auth::user()->confirmed === true)
-                        <p>Bidding will close in <span id="countdown"></span>
                         <ul>
                             @for ($i = 1; $i < 7; $i++)
                                 <li>The current high bid for seat {{ $i }} is
