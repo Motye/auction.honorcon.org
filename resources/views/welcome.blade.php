@@ -75,36 +75,6 @@
                     <p>Only whole dollar bids will be accepted. @if(Auth::user()->confirmed === false)You must confirm
                         your email address to bid.
                         @endif</p>
-                    <p>
-                        By bidding in HonorCon’s auction, each bidder agrees to these auction rules:<br/>
-                    <ol>
-                        <li>All sales are final. There will be no exchanges or refunds unless otherwise noted. HonorCon
-                            has attempted to describe this auction correctly, but neither warrants nor represents and in
-                            no event shall be responsible for the correctness of descriptions, genuineness, authorship,
-                            provenance or condition of the items. No statement made in this Auction, or made orally at
-                            the auction or elsewhere, shall be deemed such a warranty, representation, or assumption of
-                            liability.
-                        </li>
-                        <li>The auction item's starting value listed is an estimate of fair market value. Items have not
-                            been appraised unless so noted. The amount you pay above this fair market value estimate is
-                            normally tax deductible as a charitable contribution. Please consult your tax adviser to
-                            clarify amount of deduction.
-                        </li>
-                        <li>Payment for this Auction must be made in full within 24 hours or the spot will go to the
-                            next in line. HonorCon accepts via Paypal sent to finance@honorcon.org.
-                        </li>
-                        <li>Following payments, you will receive a confirmation email from Paypal. Please forward that
-                            confirmation to conchair2@gmail.com as verification to hold your spot at the gaming table.
-                            You must show your paid receipt for entrance to the game.
-                        </li>
-                        <li>Each person bidding assumes all risks and hazards related to the auction and items obtained
-                            at the auction. Each bidder agrees to hold harmless from any liability arising indirectly
-                            from HonorCon, their elected and appointed officials, members and employees, the
-                            auctioneer(s), the auction company and its agents and employees, the event organizers,
-                            sponsors, and/or volunteers connected with the auction
-                        </li>
-                    </ol>
-                    </p>
 
                     {{--Only show bid form if it's past the opening date or skip_date_check is true AND the user has confirmed their email address--}}
                     @if((time() >= strtotime(config('bids.open')) || config('bids.skip_date_check') === true) && Auth::user()->confirmed === true)
