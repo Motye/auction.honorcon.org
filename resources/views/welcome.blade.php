@@ -125,7 +125,7 @@
     @endif
 
     <script>
-        CountDownTimer('{{ config('bids.close') }}', 'countdown');
+        CountDownTimer('{{ config('bids.close') }} UTC', 'countdown');
 
         function CountDownTimer(dt, id) {
             var end = new Date(dt);
