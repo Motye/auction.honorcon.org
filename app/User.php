@@ -54,7 +54,7 @@ class User extends Model implements
     {
         $myBid = null;
 
-        if ($this->numberOfBids() > 0) {
+        if ($this->numberOfBids($seat) > 0) {
             $myBid = Bid::where('bidder', $this->id)->where('seat', $seat)->max('bid');
         }
 
